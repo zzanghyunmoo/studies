@@ -36,7 +36,7 @@ r1 = r1 * r2;
 
 고수준 프로그래밍 언어도, 메모리를 누가 관리하느냐에 따라서 매니지드 언어, 언매니지드 언어로 나뉨.
 
-## 컴파일 언어 vs 인터프리터 언어
+## 컴파일 언어, 인터프리터 언어
 
 실행을 어떤 단계를 거쳐서 하느냐의 차이임.
 
@@ -63,3 +63,123 @@ r1 = r1 * r2;
 * 강한 타입 언어: 변수 선언 후 타입 변경이 불간으함. C, C++이 이에 해당. (C#은 약한 타입 지원함.)
 
 약한 타입 언어는 실제로 코드를 실행하기 전까지 실수를 찾을 수 없다는 치명적인 단점이 생김.
+
+## 매니지드 언어, 언매니지드 언어
+
+누가 메모리의 라이프 사이클을 관리하느냐가 핵심.
+
+* 언매니지드 언어: 프로그래머가 책임지고 메모리를 반환함, 예: C, C++, Rust
+  * 성능을 극한까지 이끌어낼 수 있음.
+  * 다만 제대로 반납하지 않으면 메모리 릭 이슈가 발생함.
+* 매니지드 언어: 프로그래밍 언어가 더 이상 사용하지 않는 메모리를 반환함, 예: C#, Java, Golang
+  * 실수가 적고 편함.
+  * 성능을 극한까지 끌어내는 작업에는 사용하기 어려움.
+
+언매니지드 언어를 꼭 배워야 하는 이유?
+
+아래의 것들을 이해할 수 있음.
+
+* 메모리 동작 원리
+* CPU 동작 원리
+* 컴퓨터처럼 생각하는 방법
+* 매니지드 언어에서 지원하는 모든 마법같은 기능들의 동작 원리
+
+이른 시기에 컴퓨터처럼 생각하는 습관을 들이면 그러지 못한 사람들보다 빠르게 성장할 것임.
+
+## 프로그래밍 패러다임: 절차적 언어
+
+가장 단순한 형태의 언어. 순차적으로 함수를 실행하여 결과를 얻는다. 기능과 자료저장의 분리가 핵심. 상태가 변할 수 있다를 유의해야 함.
+
+```c
+#include <stdio.h>
+
+int gSum = 0;
+
+void Accumulate(int sum) {
+  gSum += sum;
+}
+
+int main() {
+  int num = 0;
+
+  printf("Enter a number: ");
+  scanf("%d", &num);
+  Accumulate(num);
+
+  printf("Sum after adding %d is %d\n", num, gSum);  
+  return 0;
+}
+```
+
+## 프로그래밍 패러다임: OOP 언어
+
+개체(Object) 지향 프로그래밍. 현재 있는 패러다임 중 가장 널리 쓰이는 패러다임임. 절차 지향은 기계 위주로 돌았던 프로그래밍 언어를 사람한테 직관적인 개념을 프로그래밍 언어를 만든 것.
+
+기능과 자료를 하나의 개체에 합침.
+
+Student.cs
+```c#
+namespace CSharpExample
+{
+  public class Student
+  {
+    // 상태
+    public string Name { get; private set; }
+    public string ID { get; private set; }
+
+    public Student(string name, string id)
+    {
+      Name = name;
+      ID = id;
+    }
+
+    // 기능
+    public bool TryChangeName(string name)
+    {
+      if (Name != name)
+      {
+        Name = name;
+        return true;
+      }
+
+      return false;
+    }
+  }
+}
+```
+
+Program.cs
+```c#
+using System;
+
+namespace CSharpExample
+{
+  class Program
+  {
+    static void main(string[] args)
+    {
+      Student s = new Student("Pope Kim", "a123456");
+      s.TryChangeName("Babo Kim");
+      Console.WriteLine("Student Name: {0} ID: {1}". s.Name, s.ID);
+    }
+  }
+}
+```
+
+## 프로그래밍 패러다임: 함수형 언어
+
+함수가 있지만, 상태의 변화가 없음. 즉 불변성이 핵심임. 동시성 같은 환경에서 주로 많이 사용하는 패러다임임.
+
+```f#
+(defun add (n1 n2)
+  (+ n1 n2))
+(write(add 10 20))
+```
+
+## C#은 어떤 언어인가요?
+
+C#은 다음과 같은 특징을 가지고 있음.
+
+* 강타입 언어
+* 매니지드 언어
+* OOP
