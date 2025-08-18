@@ -1,5 +1,13 @@
+// use std::process::Command;
 use assert_cmd::Command;
 use pretty_assertions::assert_eq;
+
+#[test]
+fn run_hello_cargo_std() {
+    let mut cmd = Command::new("ls");
+    let res = cmd.output();                     
+    assert!(res.is_ok());
+}
 
 #[test]
 fn run_hello_cargo() {
