@@ -1,5 +1,5 @@
 #include "hello.h"
 
 std::string getHelloMessage() {
-    return "Hello World!\n";
+    return "Hello Vcpkg!\n";
 }

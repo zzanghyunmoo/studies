@@ -1,8 +1,9 @@
 #include <gtest/gtest.h>
 #include "hello.h"
 
-TEST(MainTest, ReturnsHelloWorld) {
-    EXPECT_EQ(getHelloMessage(), "Hello World!\n");
+TEST(MainTest, ReturnsHelloVcpkg) {
+    auto message = getHelloMessage();
+    EXPECT_EQ(message, "Hello Vcpkg!\n");
 }
 
 

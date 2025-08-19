@@ -2,6 +2,7 @@
 #include "hello.h"
 
 int main() {
-    fmt::print(getHelloMessage());
+    auto message = getHelloMessage();
+    fmt::print(message);
     return 0;
 }
