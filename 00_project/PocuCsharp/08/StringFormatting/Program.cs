@@ -18,10 +18,13 @@ class Program
 
         Console.WriteLine("{0} {1}", "Name", "Win Rate");
         Console.WriteLine("{0} {1}", student1, winRate1);
-        Console.WriteLine("{0} {1}", student2, winRate2);   
+        Console.WriteLine("{0} {1}", student2, winRate2);
 
         Console.WriteLine("{0,10}{1,15}", "Name", "Win Rate");
         Console.WriteLine("{0,10}{1,15:f1}", student1, winRate1);
         Console.WriteLine("{0,10}{1,15:f1}", student2, winRate2);
+
+        byte b = 0b0001_0001;
+        Console.WriteLine("{0:b8}", b);
     }
 }
