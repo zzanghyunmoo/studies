@@ -47,8 +47,10 @@ class Program
             {
                 Console.WriteLine("error: Cannot divide by zero");
             }
-
-            Console.WriteLine($"{firstNumber} / {secondNumber} = {(double)firstNumber / secondNumber:f2}");
+            else
+            {
+                Console.WriteLine($"{firstNumber} / {secondNumber} = {(double)firstNumber / secondNumber:f2}");
+            }
         }
         else
         {
