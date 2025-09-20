@@ -1,0 +1,46 @@
+# 상위 디렉터리에서 .editorconfig 설정을 상속하려면 아래 행을 제거하세요.
+root = true
+
+# C++ 파일
+[*.cpp]
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 헤더 파일
+[*.h]
+indent_style = space
+indent_size = 4
+tab_width = 4
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# 공통 옵션
+[*.{cpp,h}]
+charset = utf-8
+max_line_length = 120
+
+# Visual Studio C++ 코드 스타일(일부 옵션)
+# 괄호 스타일: K&R (기본값, clang-format 등에서 별도 지정 가능)
+# 들여쓰기: 4칸
+# 공백: 연산자 주변에 공백
+c_cpp_space_around_operators = true
+
+# 기타 권장 옵션
+c_cpp_new_line_before_open_brace = function, class, namespace, control
+c_cpp_preserve_single_line_blocks = true
+c_cpp_preserve_single_line_statements = true
+
+# C++ 파일에만 적용되는 옵션
+[*.cpp]
+# 함수 정의 사이에 빈 줄 허용
+insert_space_between_functions = true
+
+# 헤더 파일에만 적용되는 옵션
+[*.h]
+# include 가드 권장(자동 적용은 아님, 참고용)
+# include_guard = true
