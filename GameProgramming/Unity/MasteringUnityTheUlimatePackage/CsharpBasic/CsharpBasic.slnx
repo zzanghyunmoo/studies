@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Array/Array.csproj" />
+  <Project Path="For/For.csproj" />
   <Project Path="HelloWorld/HelloWorld.csproj" />
   <Project Path="SimpleOOP/SimpleOOP.csproj" />
 </Solution>
